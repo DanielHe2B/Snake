@@ -14,7 +14,7 @@
 
 
 
-# Import the 'ruby2d' library
+# Import the library
 require 'ruby2d'
 
 # Declare variables for screen dimensions
