@@ -175,7 +175,7 @@ class Game
     end
 
         # Initialize the sound for game over
-    @lost = Sound.new('audio/gta-v-wasted-death-sound.mp3')
+    @game_over_sound = Sound.new('audio/gta-v-wasted-death-sound.mp3')
   end
 
     # Method to draw game elements on the screen
@@ -213,7 +213,7 @@ class Game
     # Method to end the game
   def end_game
     @running = false
-    @lost.play
+    @game_over_sound.play
   end
 end
 
