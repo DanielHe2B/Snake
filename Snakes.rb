@@ -27,7 +27,7 @@ set background: 'green'
 set title: 'Snake'
 
 # Global variable to store the highest score
-$record = 0
+$high_score = 0
 
 # Define a class for the start menu
 class StartMenu
@@ -185,7 +185,7 @@ class Game
     if @running== false
               # Draw game over screen if the game is not running
         Rectangle.new(x: 150, y: 100, width: 300, height: 400, color: 'white', z: 4)
-        Text.new("Score:#{@score}   Record:#{$record}", x:150,y:100, size: 20,color:'black', z:5)
+        Text.new("Score:#{@score}   Record:#{$high_score}", x:150,y:100, size: 20,color:'black', z:5)
         Text.new("Game Over", x:220, y:220, size:30, color:'black', z:7)
         Rectangle.new(x:200, y:300, width:200, height: 80,color: 'red',z:6)
         Text.new("Restart", x:250,y:320,size:30, color:'white', z:7)
@@ -203,8 +203,8 @@ class Game
     # Method to update the score and reset the position of the ball
   def record_hit
     @score += 1
-    if @score>=$record
-      $record=@score
+    if @score>=$high_score
+      $high_score=@score
   end
     @ball_x = rand(Window.width / 25)
     @ball_y = rand(Window.height / 25)
